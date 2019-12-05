@@ -1,23 +1,7 @@
-FROM ubuntu:18.04
+FROM ubuntu:16.04
 
-# Prepare directories
-RUN mkdir /config
+WORKDIR /app
 
-# Install dependencies
-RUN apt update && apt -y upgrade && apt -y install \
-    build-essential \
-    cmake \
-    git \
-    libmicrohttpd-dev \
-    libssl-dev \
-    libuv1-dev \
-    uuid-dev
-
-# Clean
-RUN rm -rf /var/lib/apt/lists/*
-
-# Get Code
-WORKDIR /opt
 
 
 RUN apt-get update && \
