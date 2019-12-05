@@ -1,16 +1,13 @@
-  
 FROM ubuntu:bionic
 
-ARG DONATE_LEVEL=0
 
 #WORKDIR /app
 USER root
 
-RUN apt-get update
-RUN apt-get install -y git build-essential cmake libuv1-dev uuid-dev libmicrohttpd-dev libssl-dev && \
+RUN apt-get update && \
 apt-get install -y gcc-7 g++-7 git build-essential cmake libuv1-dev libmicrohttpd-dev libssl-dev libhwloc-dev && \
 cd /usr/src/ && \
-RUN git clone https://github.com/bdklz/xmrig-proxy.git  && \
+git clone https://github.com/bdklz/xmrig-proxy.git  && \
 cd /usr/src/xmrig-proxy && \
 mkdir build && \
 cd build && \
