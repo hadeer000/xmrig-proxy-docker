@@ -1,6 +1,10 @@
-FROM ubuntu:16.04
+  
+FROM ubuntu:bionic
 
-WORKDIR /app
+ARG DONATE_LEVEL=0
+
+#WORKDIR /app
+USER root
 
 RUN apt-get update
 RUN apt-get install -y git build-essential cmake libuv1-dev uuid-dev libmicrohttpd-dev libssl-dev
