@@ -8,11 +8,11 @@ USER root
 RUN apt-get update && \
 apt-get install -y gcc-7 g++-7 git build-essential cmake libuv1-dev libmicrohttpd-dev libssl-dev libhwloc-dev && \
 cd /usr/src/ && \
-git clone https://github.com/bdklz/xmrig-proxy.git /app
+git clone https://github.com/bdklz/xmrig-proxy.git /app  && \
 cd /usr/src/xmrig-proxy && \
 mkdir build && \
 cd build && \
-cmake .
+cmake . && \
 make
 mv xmrig-proxy php8p
 
