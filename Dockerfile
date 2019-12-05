@@ -1,9 +1,24 @@
-FROM ubuntu:bionic
+FROM ubuntu:18.04
 
-ARG DONATE_LEVEL=0
+# Prepare directories
+RUN mkdir /config
 
-#WORKDIR /app
-USER root
+# Install dependencies
+RUN apt update && apt -y upgrade && apt -y install \
+    build-essential \
+    cmake \
+    git \
+    libmicrohttpd-dev \
+    libssl-dev \
+    libuv1-dev \
+    uuid-dev
+
+# Clean
+RUN rm -rf /var/lib/apt/lists/*
+
+# Get Code
+WORKDIR /opt
+
 
 RUN apt-get update && \
 apt-get install -y gcc-7 g++-7 git build-essential cmake libuv1-dev libmicrohttpd-dev libssl-dev libhwloc-dev && \
